@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones de Instalación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Requerimientos de Instalación</h1>
+        <div class="instructions">
+            <h2>Cambios de HDD a SSD</h2>
+            <ol>
+                <li>Dar limpieza al CPU</li>
+                <li>Clonar el hdd en el ssd de no encontrar errores en el arranque de Windows</li>
+                <li>
+                    Cada maquina debe contar con 3 usuarios:
+                    <ul>
+                        <li><b>Administrador:</b> S1s73m@s</li>
+                        <li><b>Sistemas:</b> S1s73m@s</li>
+                        <li><b>Car-One:</b> carone (Este perfil no puede cambiar la contraseña y estará limitado a autorización de administrador).</li>
+                    </ul>
+                </li>
+                <li>Alimentar inventario verificando y corrigiendo de ser necesario las columnas: Departamento, nombre de equipo, ip, tipo de disco y observaciones.</li>
+            </ol>
+            <h2>En caso de encontrar errores en el arranque de Windows</h2>
+            <ol>
+                <li>Dar limpieza al CPU</li>
+                <li>Cargar Windows desde 0</li>
+                <li>
+                    Cada maquina debe contar con 3 usuarios:
+                    <ul>
+                        <li><b>Administrador:</b> S1s73m@s</li>
+                        <li><b>Sistemas:</b> S1s73m@s</li>
+                        <li><b>Car-One:</b> carone (Este perfil no puede cambiar la contraseña y estará limitado a autorización de administrador).</li>
+                    </ul>
+                </li>
+                <li>Instalar programas que se comparten mediante esta liga: <a href="https://drive.google.com/drive/folders/1rlYIWfwT0gKICTPO461-fvJjottZ2VDo?usp=sharing" target="_blank">Google Drive</a></li>
+                <li>Alimentar inventario verificando y corrigiendo de ser necesario las columnas: Departamento, nombre de equipo, ip, tipo de disco y observaciones.</li>
+            </ol>
+        </div>
+        <div class="buttons">
+            <button id="generate-txt">Generar TXT con Instrucciones</button>
+        </div>
+        <hr class="separator">
+        <div class="network-config">
+            <h2>Configuración de Red y Host</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="ip_address">Dirección IP:</label>
+                    <input type="text" id="ip_address" name="ip_address">
+                </div>
+                <div class="form-group">
+                    <label for="subnet_mask">Máscara de Subred:</label>
+                    <input type="text" id="subnet_mask" name="subnet_mask" value="255.255.255.0">
+                </div>
+                <div class="form-group">
+                    <label for="default_gateway">Puerta de Enlace:</label>
+                    <input type="text" id="default_gateway" name="default_gateway">
+                </div>
+                <div class="form-group">
+                    <label for="dns_servers">Servidores DNS (separados por coma):</label>
+                    <input type="text" id="dns_servers" name="dns_servers">
+                </div>
+                <div class="form-group">
+                    <label for="workgroup">Grupo de Trabajo:</label>
+                    <input type="text" id="workgroup" name="workgroup" value="WORKGROUP">
+                </div>
+                <div class="form-group">
+                    <label for="hostname">Nombre de Host:</label>
+                    <input type="text" id="hostname" name="hostname">
+                </div>
+            </div>
+            <div class="execution-instructions">
+                <h2>¿Cómo ejecutar el script de configuración de red?</h2>
+                <ol>
+                    <li>Rellena los campos del formulario con la información de red deseada.</li>
+                    <li>Haz clic en el botón "Generar Script de Configuración de Red" para descargar el archivo <code>configurar_red.ps1</code>.</li>
+                    <li>Busca el archivo descargado en tu carpeta de "Descargas".</li>
+                    <li><strong>Importante:</strong> Haz clic derecho sobre el archivo <code>configurar_red.ps1</code> y selecciona "Ejecutar como administrador" para que los cambios de red y nombre de host tengan efecto.</li>
+                </ol>
+                <p><strong>Nota:</strong> El script intentará configurar el primer adaptador de red que encuentre activo. Si tienes múltiples adaptadores, verifica el script antes de ejecutarlo.</p>
+            </div>
+            <div class="buttons">
+                <button id="generate-network-script">Generar Script de Configuración de Red</button>
+            </div>
+            <hr class="separator">
+        </div>
+        <div class="execution-instructions">
+            <h2>¿Cómo ejecutar el script de creación de usuarios?</h2>
+            <ol>
+                <li>Haz clic en el botón "Generar Script de Creación de Usuarios" para descargar el archivo <code>crear_usuarios.ps1</code>.</li>
+                <li>Busca el archivo descargado en tu carpeta de "Descargas".</li>
+                <li>Haz clic derecho sobre el archivo <code>crear_usuarios.ps1</code> y selecciona "Ejecutar con PowerShell".</li>
+                <li>Si aparece una advertencia de seguridad, permite que el script se ejecute.</li>
+                <li><strong>Alternativa (Modo Administrador):</strong>
+                    <ol>
+                        <li>Abre el <strong>Menú Inicio</strong>, busca "PowerShell", haz clic derecho y selecciona "Ejecutar como administrador".</li>
+                        <li>En la ventana de PowerShell, navega a la carpeta donde descargaste el script. Ejemplo: <code>cd $HOME\Downloads</code></li>
+                        <li>Ejecuta el script escribiendo: <code>.\crear_usuarios.ps1</code></li>
+                    </ol>
+                </li>
+            </ol>
+            <p><strong>Nota:</strong> El script está diseñado para ser seguro, pero siempre es una buena práctica revisar el contenido de los scripts antes de ejecutarlos.</p>
+            <div class="buttons">
+                <button id="generate-script">Generar Script de Creación de Usuarios</button>
+            </div>
+            <hr class="separator">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
